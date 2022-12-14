@@ -1,0 +1,38 @@
+.features{
+    grid-area: feature-start/col-end 8/feature-end/col-start 1;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem,1fr));
+    grid-template-rows: auto auto;
+    grid-gap: 6rem;
+    margin: 6rem;
+
+    
+}
+
+.feature{
+
+
+    h4{
+        grid-area: 1/-1/2/3;
+    }
+
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: auto auto;
+        
+
+    &__icon{
+        fill : $color-primary;
+        height: 4.5rem;
+        width: 4.5rem;
+        grid-area: 1/3/2/1;
+
+    }
+    
+    &__text{
+        font-size: 1.7rem;
+        grid-area: 2/-1/-1/3;
+
+    }
+}

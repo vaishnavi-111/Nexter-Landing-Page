@@ -1,0 +1,156 @@
+.sidebar{
+    grid-area: 1/nav-end/-1/nav-start;
+    background-color: $color-primary;
+    position: relative;
+
+   
+
+    @media screen and (max-width:$m-large) {
+       grid-area: sidebar-start/full-end/sidebar-end/full-start;
+       display: flex;
+       justify-content: flex-start;
+       align-items: center;
+       padding-right: 3rem;
+       padding-top: 3rem;
+    }
+
+
+}
+
+
+
+
+.sidebar.open{
+  .nav-box{
+      height: 100vh;
+      width: 100vw;
+      border-radius: 0;
+      z-index: 20;
+      position: fixed;
+      text-transform: uppercase;
+    
+        display: flex;
+        margin: 0 auto;
+        flex-direction: column;
+       
+        color: whitesmoke;
+        justify-content: space-around;
+        align-items: center;
+        list-style:none;
+        padding: 10rem;
+        text-align: center;
+        li{
+            font-size: 3rem;
+            opacity: 1;
+            cursor: pointer;
+            transform: translateX(0);
+        }
+
+        @media screen and (max-width:$m-medium) {
+            li{
+                font-size: 2.5rem;
+                
+
+            }
+        }
+
+
+  }
+}
+
+
+
+.nav-box{
+    height: 5rem;
+    width: 5rem;
+    background-color: $color-primary;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    transition: all 0.3s;
+
+    li{
+        font-size: 0;
+        color: whitesmoke;
+        opacity: 0;
+        transition: opacity 0.9s,
+                    transform 0.9s;
+        transition-delay: 0.2s;
+        transform: translateX(-10rem);
+    }
+}
+
+.burg-cont{
+    // background-color: greenyellow;
+    height: 5rem;
+    width: 5rem;
+    margin: 2rem 1rem;
+    position: relative;
+    z-index: 100;
+
+
+   
+    
+
+
+    .burg{
+        display: inline-block;
+        height: 0.3rem;
+        width: 5.5rem;
+        background-color: white;
+        position: relative;
+      
+    z-index: 100;
+
+     
+    }
+
+    .burg::after{
+        content: "";
+        height: 0.3rem;
+        width: 5.5rem;
+        position: absolute;
+        top: -1rem;
+        left: 0;
+        background-color: white;
+        transition: all 0.3s;
+    
+
+    
+        
+    }
+    .burg::before{
+        content: "";
+        height: 0.3rem;
+        width: 5.5rem;
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        background-color: white;
+        transition: all 0.3s;
+    }
+
+   
+}
+
+.burg-cont.close{
+    .burg{
+       height: 0;
+       position: fixed;
+       margin-top: 1rem;
+    }
+
+    .burg::after{
+        top: 0;
+        transform: rotate(135deg);
+    }
+    .burg::before{
+        top: 0;
+        transform: rotate(-135deg);
+    }
+}
+
+
+
+

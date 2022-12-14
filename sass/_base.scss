@@ -1,0 +1,74 @@
+// COLOR VARIABLES
+$color-primary: #c69963;
+$color-primary-dark: #B28451;
+
+$color-secondary: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em;    // 1200px
+$bp-large: 62.5rem;   // 1000px
+$bp-medium: 50rem;    // 800px
+$bp-small: 37.5rem;   // 600px
+$bp-smallest: 25rem;  // 400px
+
+
+
+
+$m-largest : 75em;
+$m-large : 62.5em;
+$m-medium: 50em; 
+$m-medium: 50em; 
+$m-small: 37.5em; 
+
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5% ;
+
+    @media (max-width:$m-largest) {
+        font-size: 50%;
+    }
+}
+
+body{
+    font-family: $font-primary;
+    // color: $color-primary;
+    font-weight: 300;
+    line-height: 1.6;
+
+    display: grid;
+    grid-template-columns: [nav-start]8rem [nav-end full-start] minmax(4rem,1fr) repeat(8,[col-start] minmax(min-content,14rem) [col-end])  minmax(4rem,1fr) [full-end];
+    grid-template-rows: [header-start]80vh[header-end feature-start] min-content[feature-end story-start] 40vw[story-end homes-start] min-content[homes-end gallery-start] min-content[gallery-end footer-start] min-content[footer-end];
+
+    @media screen and (max-width:$m-large) {
+        grid-template-columns:  [full-start] minmax(4rem,1fr) repeat(8,[col-start] minmax(min-content,14rem) [col-end])  minmax(4rem,1fr) [full-end];
+        grid-template-rows: [sidebar-start] 8rem [sidebar-end header-start]80vh[header-end feature-start] min-content[feature-end story-start] 40vw[story-end homes-start] min-content[homes-end gallery-start] min-content[gallery-end footer-start] min-content[footer-end];
+    }
+    @media screen and (max-width:$m-medium) {
+        grid-template-columns:  [full-start] minmax(4rem,1fr) repeat(8,[col-start] minmax(min-content,14rem) [col-end])  minmax(4rem,1fr) [full-end];
+        grid-template-rows: [sidebar-start] 8rem [sidebar-end header-start] 75vh [header-end relator-start]min-content[relator-end feature-start] min-content[feature-end story-c-start]min-content[story-c-end story-p-start] min-content[story-p-end homes-start] min-content[homes-end gallery-start] min-content[gallery-end footer-start] min-content[footer-end];
+    }
+
+   
+}
+
+.container.open{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+

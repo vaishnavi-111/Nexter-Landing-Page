@@ -1,0 +1,43 @@
+.relators{
+    grid-area: header-start/full-end/header-end/col-start 7;
+    background-color: $color-secondary;
+    padding: 5vw;
+
+
+    @media screen and (max-width:$m-medium) {
+        grid-area: relator-start/full-end/relator-end/full-start;
+    }
+
+    &__info{
+
+        margin-top: 4rem;
+        display: grid;
+        grid-template-columns: repeat(2,max-content);
+        grid-gap: 2rem;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (max-width:$m-medium) {
+            grid-template-columns: min-content max-content min-content max-content min-content max-content;
+        }
+        @media screen and (max-width:$m-small) {
+            grid-template-columns: repeat(2,max-content);
+        }
+    
+       
+
+        img{
+            border-radius: 50%;
+        }
+
+        h4{
+            color: white;
+        }
+
+        h5{
+            color: $color-grey-light-2;
+            font-size: 1.3rem;
+        }
+    }
+
+}
